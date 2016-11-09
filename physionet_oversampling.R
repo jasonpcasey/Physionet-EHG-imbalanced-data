@@ -10,15 +10,16 @@ library(xtable)
 library(DMwR) #sampling
 
 #set working directory to the current source file directory
-dir.wd <- "Dropbox/R workspace/github/physionet_oversampling/"
-source(paste(dir.wd, "/binary_metrics.R", sep = ""))
+#dir.wd <- "Dropbox/R workspace/github/physionet_oversampling/"
+dir.wd <- ''
+source(paste(dir.wd, "binary_metrics.R", sep = ""))
        
 #set output path for generated figures, used only if output_to_pdf is TRUE
 figuresOutputPath <- dir.wd
 output_to_pdf <- TRUE
 
 #read data
-tpehgdb_features <- read.csv(paste(dir.wd, "/tpehgdb_features.csv", sep = ""))
+tpehgdb_features <- read.csv(paste(dir.wd, "tpehgdb_features.csv", sep = ""))
 #select third channel only, supposedly the best one for this analysis
 tpehgdb_features <- tpehgdb_features[tpehgdb_features$channel == 3, ]
 
